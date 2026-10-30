@@ -1,0 +1,6 @@
+model_parts/
+*.safetensors
+*.partial
+__pycache__/
+*.log
+.github-auth*

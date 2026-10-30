@@ -1,0 +1,905 @@
+{
+  "id": "5b725aa0-22cc-4ed0-a4cf-99b85c78d0c8",
+  "revision": 0,
+  "last_node_id": 15,
+  "last_link_id": 16,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "VMMOSSLayoutStudio",
+      "pos": [
+        580,
+        0
+      ],
+      "size": [
+        620,
+        1240
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "参考图",
+          "name": "ref_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "全局描述（连线）",
+          "name": "global_prompt_in",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "各框文案（连线）",
+          "name": "box_texts_in",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        },
+        {
+          "localized_name": "外部布局 JSON",
+          "name": "external_layout_json",
+          "shape": 7,
+          "type": "STRING",
+          "link": 15
+        },
+        {
+          "localized_name": "界面语言",
+          "name": "ui_language",
+          "type": "COMBO",
+          "widget": {
+            "name": "ui_language"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "尺寸预设",
+          "name": "canvas_preset",
+          "type": "COMBO",
+          "widget": {
+            "name": "canvas_preset"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "宽 W",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "高 H",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "比例同步",
+          "name": "bbox_ratio_sync",
+          "type": "COMBO",
+          "widget": {
+            "name": "bbox_ratio_sync"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "体裁先验",
+          "name": "scene_meta",
+          "type": "COMBO",
+          "widget": {
+            "name": "scene_meta"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "画布结构",
+          "name": "canvas_layout_type",
+          "type": "COMBO",
+          "widget": {
+            "name": "canvas_layout_type"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "图层排序",
+          "name": "layer_order_mode",
+          "type": "COMBO",
+          "widget": {
+            "name": "layer_order_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "全局描述",
+          "name": "global_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "global_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "外部同步方式",
+          "name": "external_sync_mode",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "external_sync_mode"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "自定义 meta 标签",
+          "name": "custom_meta_tags",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "custom_meta_tags"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "layout_prompt",
+          "name": "layout_prompt",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        },
+        {
+          "localized_name": "draft_json",
+          "name": "draft_json",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "localized_name": "preview_image",
+          "name": "preview_image",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        },
+        {
+          "localized_name": "width",
+          "name": "width",
+          "type": "INT",
+          "links": [
+            4
+          ]
+        },
+        {
+          "localized_name": "height",
+          "name": "height",
+          "type": "INT",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "title": "③ 主视觉与局部特写 · 自动分层布局",
+      "properties": {
+        "Node name for S&R": "VMMOSSLayoutStudio",
+        "vmmoss_guides": {
+          "thirds": true,
+          "golden": false
+        }
+      },
+      "widgets_values": [
+        "中文 (ZH)",
+        "Custom (自定义宽高 / Custom W×H)",
+        768,
+        1152,
+        "Smart (文字/主体保比例，背景铺满)",
+        "comic",
+        "multi_panel",
+        "Auto (背景->物体->角色->文字置顶)",
+        "等待漫画导演根据你的故事生成分镜。",
+        "{}",
+        "Replace Canvas (用外部 JSON 覆盖画布并回填)",
+        "sequential manga"
+      ],
+      "widgets_values_named": {
+        "ui_language": "中文 (ZH)",
+        "canvas_preset": "Custom (自定义宽高 / Custom W×H)",
+        "width": 768,
+        "height": 1152,
+        "bbox_ratio_sync": "Smart (文字/主体保比例，背景铺满)",
+        "scene_meta": "comic",
+        "canvas_layout_type": "multi_panel",
+        "layer_order_mode": "Auto (背景->物体->角色->文字置顶)",
+        "global_prompt": "等待漫画导演根据你的故事生成分镜。",
+        "layout_data": "{}",
+        "external_sync_mode": "Replace Canvas (用外部 JSON 覆盖画布并回填)",
+        "custom_meta_tags": "sequential manga"
+      }
+    },
+    {
+      "id": 2,
+      "type": "UNETLoader",
+      "title": "② MOSS SFT · INT8 低显存模型",
+      "pos": [
+        -440,
+        0
+      ],
+      "size": [
+        330,
+        150
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "moss_image_sft_int8_convrot.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "CLIPLoader",
+      "title": "MOSS 图像理解编码器 · 类型勿改",
+      "pos": [
+        -440,
+        210
+      ],
+      "size": [
+        330,
+        150
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2,
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3.5_9b_int8_convrot.safetensors",
+        "moss_image",
+        "default"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "title": "② Flux2 VAE",
+      "pos": [
+        -440,
+        420
+      ],
+      "size": [
+        330,
+        150
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "flux2-vae.safetensors"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncode",
+      "title": "③ 布局 JSON 编码（自动连接）",
+      "pos": [
+        1270,
+        0
+      ],
+      "size": [
+        390,
+        220
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 1,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "title": "③ 负面提示词",
+      "pos": [
+        1270,
+        280
+      ],
+      "size": [
+        390,
+        200
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "blurry, low quality, incoherent story, identical repeated panels, inconsistent character design, malformed hands, extra limbs, messy panel borders, random lettering, watermark"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "EmptyFlux2LatentImage",
+      "title": "④ 画布尺寸 · 跟随工作台",
+      "pos": [
+        1270,
+        550
+      ],
+      "size": [
+        330,
+        120
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 4,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 5,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyFlux2LatentImage"
+      },
+      "widgets_values": [
+        768,
+        1152,
+        1
+      ]
+    },
+    {
+      "id": 8,
+      "type": "KSampler",
+      "title": "⑤ 精细漫画生成 · 35步 / CFG 3.5",
+      "pos": [
+        1740,
+        0
+      ],
+      "size": [
+        350,
+        320
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 6
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 7
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 8
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        42,
+        "fixed",
+        35,
+        3.5,
+        "euler",
+        "simple",
+        1.0
+      ]
+    },
+    {
+      "id": 9,
+      "type": "VAEDecodeTiled",
+      "title": "⑥ 分块解码 · 节省显存",
+      "pos": [
+        1740,
+        420
+      ],
+      "size": [
+        350,
+        190
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 10
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeTiled"
+      },
+      "widgets_values": [
+        512,
+        64,
+        64,
+        8
+      ]
+    },
+    {
+      "id": 10,
+      "type": "SaveImage",
+      "title": "⑦ 高级分镜漫画 · 自动保存",
+      "pos": [
+        2170,
+        0
+      ],
+      "size": [
+        560,
+        800
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "MOSS_Manga/PremiumComic"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "PreviewImage",
+      "title": "布局预览 · 无需加载模型",
+      "pos": [
+        1270,
+        810
+      ],
+      "size": [
+        390,
+        530
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 13
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 12,
+      "type": "MarkdownNote",
+      "title": "使用说明",
+      "pos": [
+        -440,
+        880
+      ],
+      "size": [
+        390,
+        420
+      ],
+      "flags": {},
+      "order": 99,
+      "mode": 0,
+      "properties": {},
+      "widgets_values": [
+        "# 高级自动漫画 · 参考图破框版\n只修改②的故事提示词即可。默认示例可全部替换。\n默认：巨大主视觉 + 眼/手/道具小特写 + 窄长画格 + 底部收尾。\n前景人物与背景框分层，使头发、衣摆或动作越过主格边框。\n高级构图可选：主视觉破框 / 自动 / 动态斜切 / 叠框特写。\n导演根据故事生成角色、情绪重点和镜头；排版器安排主次、重叠和留白。\n导演种子改变布局镜像和镜头方案；采样种子改变画面细节。\n白缝与斜边通过区域位置及提示词引导；绘图模型可能偏离，必要时换采样种子。\n默认无对白，避免乱码。\n输出：output/MOSS_Manga/PremiumComic。\n768×1152 / 35步，适配本机8GB。\n本机节点和模型已安装，直接拖入此JSON后运行。"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "CLIPLoader",
+      "title": "① 本地漫画导演模型 · 复用已有Qwen3 4B",
+      "pos": [
+        -440,
+        630
+      ],
+      "size": [
+        330,
+        150
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen_3_4b_fp8_mixed.safetensors",
+        "flux2",
+        "default"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "MangaStoryboardDirector",
+      "title": "② 输入任意故事 · 高级破框分镜导演",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        550,
+        740
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "layout_draft",
+          "type": "STRING",
+          "links": [
+            15
+          ]
+        },
+        {
+          "name": "storyboard",
+          "type": "STRING",
+          "links": [
+            16
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MangaStoryboardDirector"
+      },
+      "widgets_values": [
+        "一位美丽的黑色长发成年女小提琴家，穿细致的黑色丝绒长裙，独自站在废弃歌剧院中。她刚得知再也见不到爱人，眼中含泪，手中握着断裂的银色怀表。风从破碎彩窗吹入，吹起长发与裙摆。画面伤感、华丽、安静而有压迫感。",
+        "Auto",
+        "黑白精细漫画",
+        "大主视觉、人物破框、眼睛和手的局部特写、窄长画格、强烈黑白对比、清晰的视觉动线；不要等宽横条或九宫格。",
+        768,
+        1152,
+        42,
+        "fixed",
+        "主视觉破框（参考图）"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "PreviewAny",
+      "title": "导演生成的故事、镜头与构图方案",
+      "pos": [
+        0,
+        820
+      ],
+      "size": [
+        500,
+        540
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 16
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      5,
+      1,
+      "STRING"
+    ],
+    [
+      2,
+      3,
+      0,
+      5,
+      0,
+      "CLIP"
+    ],
+    [
+      3,
+      3,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      4,
+      1,
+      3,
+      7,
+      0,
+      "INT"
+    ],
+    [
+      5,
+      1,
+      4,
+      7,
+      1,
+      "INT"
+    ],
+    [
+      6,
+      2,
+      0,
+      8,
+      0,
+      "MODEL"
+    ],
+    [
+      7,
+      5,
+      0,
+      8,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      8,
+      6,
+      0,
+      8,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      9,
+      7,
+      0,
+      8,
+      3,
+      "LATENT"
+    ],
+    [
+      10,
+      8,
+      0,
+      9,
+      0,
+      "LATENT"
+    ],
+    [
+      11,
+      4,
+      0,
+      9,
+      1,
+      "VAE"
+    ],
+    [
+      12,
+      9,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      1,
+      2,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      13,
+      0,
+      14,
+      0,
+      "CLIP"
+    ],
+    [
+      15,
+      14,
+      0,
+      1,
+      3,
+      "STRING"
+    ],
+    [
+      16,
+      14,
+      1,
+      15,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.65,
+      "offset": [
+        600,
+        180
+      ]
+    }
+  },
+  "version": 0.4
+}

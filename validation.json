@@ -1,0 +1,17 @@
+{
+  "source_generation": "passed on existing unified 8188 installation",
+  "geometry_cases": 32,
+  "frontend_errors": [],
+  "hardware": "RTX 4070 Laptop 8GB, RAM 32GB",
+  "resolution": [
+    768,
+    1152
+  ],
+  "clean_buyer_install": "not yet end-to-end tested",
+  "installer": "passed synthetic portable path with spaces and repeated backup",
+  "model_weights_in_git": false,
+  "privacy": "No user profiles, databases, browser credentials or personal outputs included",
+  "model_tools": "synthetic split/merge/verify passed",
+  "python_syntax": "passed",
+  "core_archive": "official original source archive with SHA256 lock"
+}
