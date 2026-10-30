@@ -1,5 +1,9 @@
 {
   "pages": 20,
   "text_characters": 16168,
-  "links": 18
+  "links": 18,
+  "all_pages_rendered": true,
+  "all_pages_contact_sheet_reviewed": true,
+  "representative_page_full_size_reviewed": 7,
+  "visual_result": "passed"
 }
