@@ -1,0 +1,19 @@
+name: Verify and upload model release parts
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        model: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download verified original and upload exact parts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -u scripts/upload_models_ci.py '${{ matrix.model }}' '${{ github.repository }}'
