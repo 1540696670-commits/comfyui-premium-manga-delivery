@@ -1,0 +1,67 @@
+[
+  {
+    "name": "flux2-vae.safetensors.part001",
+    "size": 336211292,
+    "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3"
+  },
+  {
+    "name": "moss_image_sft_int8_convrot.safetensors.part001",
+    "size": 1879048192,
+    "sha256": "e0816c7f7ae70c271cd45bd7f07fdd49ad9919532025ab7e212641ca618a2530"
+  },
+  {
+    "name": "moss_image_sft_int8_convrot.safetensors.part002",
+    "size": 1879048192,
+    "sha256": "2ea80789b4707466b311aae048b963d987a1e74e822242ccc27eecbbdcf13e24"
+  },
+  {
+    "name": "moss_image_sft_int8_convrot.safetensors.part003",
+    "size": 1655602574,
+    "sha256": "4b2d7a0ee212081d398bb8791c2a2dc7dae48558e15d8e2b135ce4217956443d"
+  },
+  {
+    "name": "qwen3.5_9b_int8_convrot.safetensors.part001",
+    "size": 1879048192,
+    "sha256": "04d49da2472c418f5bcfce8d242a7744e1c4fe8b1dcf15acd943a72cef6b1795"
+  },
+  {
+    "name": "qwen3.5_9b_int8_convrot.safetensors.part002",
+    "size": 1879048192,
+    "sha256": "2db88b10d5781635985f112021a3bb0dc6f4b21080a9b6d0ddcc2a54a6cda4a6"
+  },
+  {
+    "name": "qwen3.5_9b_int8_convrot.safetensors.part003",
+    "size": 1879048192,
+    "sha256": "fb371190ddaed8a870802857a0853672112346f8121389674a0f9942ff562c3b"
+  },
+  {
+    "name": "qwen3.5_9b_int8_convrot.safetensors.part004",
+    "size": 1879048192,
+    "sha256": "96c58d9f916b15a55eff95bc93bea42b6c732eb6012f9a82203d6a2805a308ab"
+  },
+  {
+    "name": "qwen3.5_9b_int8_convrot.safetensors.part005",
+    "size": 1879048192,
+    "sha256": "54187c2475bf4fb05fb937efee54383e1dec67d4c45b1c9483847a5b2e8a1c31"
+  },
+  {
+    "name": "qwen3.5_9b_int8_convrot.safetensors.part006",
+    "size": 352880572,
+    "sha256": "35b46f09f88e72ebf215dd29f67326ea129242da51f36a24406cd122316fd4c3"
+  },
+  {
+    "name": "qwen_3_4b_fp8_mixed.safetensors.part001",
+    "size": 1879048192,
+    "sha256": "384e744ac0268a58dd07aabea60ade8da7a266183f0537a4eb276052f109b664"
+  },
+  {
+    "name": "qwen_3_4b_fp8_mixed.safetensors.part002",
+    "size": 1879048192,
+    "sha256": "d306b947d70ed117a25426879497d32d6a4e007876aeea6f110fa45e47d82f15"
+  },
+  {
+    "name": "qwen_3_4b_fp8_mixed.safetensors.part003",
+    "size": 1873897667,
+    "sha256": "bb4c0c2fe8feadc0d998a96a347a06ed7c70d3a1745bbacca0caefc7ba64c062"
+  }
+]
