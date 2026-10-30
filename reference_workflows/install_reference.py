@@ -9,11 +9,12 @@ def main():
     if not py.is_file() or not (core/'main.py').is_file():raise SystemExit('请选择包含 ComfyUI 和 python_embeded 的便携版根目录。')
     # Existing unified installations load custom_nodes from ComfyUI_Manga too.
     node_root=(root/'ComfyUI_Manga/custom_nodes') if (root/'manga_setup/launch_unified.py').is_file() else core/'custom_nodes'
-    source=HERE/'custom_nodes/ComfyUI-Manga-Reference';target=node_root/source.name
-    if target.exists():
-        backup=root/'manga_install_backups'/('reference_'+datetime.datetime.now().strftime('%Y%m%d_%H%M%S_%f'))
-        shutil.copytree(target,backup/source.name)
-    shutil.copytree(source,target,dirs_exist_ok=True)
+    backup=root/'manga_install_backups'/('reference_'+datetime.datetime.now().strftime('%Y%m%d_%H%M%S_%f'))
+    for source in (HERE/'custom_nodes').iterdir():
+        target=node_root/source.name
+        if target.exists():
+            shutil.copytree(target,backup/source.name)
+        shutil.copytree(source,target,dirs_exist_ok=True)
     workflows=core/'user/default/workflows/MOSS漫画/参考图与分镜';workflows.mkdir(parents=True,exist_ok=True)
     for f in HERE.glob('0*.json'):shutil.copy2(f,workflows/f.name)
     demo=core/'input/MangaReference/storyboard_demo.png';demo.parent.mkdir(parents=True,exist_ok=True)
