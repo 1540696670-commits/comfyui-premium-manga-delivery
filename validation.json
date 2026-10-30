@@ -13,5 +13,6 @@
   "privacy": "No user profiles, databases, browser credentials or personal outputs included",
   "model_tools": "synthetic split/merge/verify passed",
   "python_syntax": "passed",
-  "core_archive": "official original source archive with SHA256 lock"
+  "core_archive": "official original source archive with SHA256 lock",
+  "clean_source_startup": "passed: bundled unmodified core + three packaged nodes + additive compat launcher; CPU startup using existing Python and dependency override; all workflow node types recognized. Fresh Python/pip environment and GPU generation of this staged copy not tested."
 }
