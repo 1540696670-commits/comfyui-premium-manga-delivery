@@ -1,3 +1,4 @@
+705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da  .gitattributes
 7593b699f5c21d64395bfa2aabce61f321fcb0bb188aeb50f365e405c0146460  .github/workflows/upload-models.yml
 cca472f7a432019f19b5accdb18c12430003cb4957204e948541bbd62d268fcc  .gitignore
 54bc4927f5c81048ac65346c641ace171605675860e0b00498a0a70ba0e54a0d  core-lock.json
@@ -65,10 +66,10 @@ d96f452a839155128b1c4f0cfc361f3c517845dd444c683d699a72d79f9f7f4f  custom_nodes/V
 f356f6c94a71ca872eeeeb8d1b8c6d9e3e046230b86343d8779037647f0c65f3  custom_nodes/VMNodes/web/moss_layout_studio.js
 994e79632087799d4eab1044df7add02f689b06375470936504420a2c491ec6d  custom_nodes/VMNodes/web/unified.js
 6dfa522d356e7067c76ffd214ddea2580ec016036507368db15283e00d159634  custom_nodes/VMNodes/workflows/image_edit/Qwen-Image-2.1-Single-Image-Edit.json
-a48a6e19e401ad5808f32333545a7eadfb3001eb159e0a1d1732ecae821348f6  custom_nodes/VMNodes/workflows/image_edit/VM_Í¼Ïñ±à¼­.json
+a48a6e19e401ad5808f32333545a7eadfb3001eb159e0a1d1732ecae821348f6  custom_nodes/VMNodes/workflows/image_edit/VM_å›¾åƒç¼–è¾‘.json
 8947907a35ad4274834884c7ced4301764ac0191a52acd0b70c9c19e47880da6  custom_nodes/VMNodes/workflows/moss/MOSS-V2.3-Layout-Studio.json
-b2aa0228789bc279ec7eb0185eda77f09467b9ca3710c40e4854e51aff2ee496  examples/Ö÷ÊÓ¾õÆÆ¿ò_Êµ²â.png
-79e6ab5b181399aba7d8e0aa9b2d73813015e36a76dc0ea605ffb5949820e9f8  examples/¶¯Ì¬Ğ±ÇĞ_Êµ²â.png
+b2aa0228789bc279ec7eb0185eda77f09467b9ca3710c40e4854e51aff2ee496  examples/ä¸»è§†è§‰ç ´æ¡†_å®æµ‹.png
+79e6ab5b181399aba7d8e0aa9b2d73813015e36a76dc0ea605ffb5949820e9f8  examples/åŠ¨æ€æ–œåˆ‡_å®æµ‹.png
 c1bbe3705942c11ff38895eae85fc7c375ddb63e92aeac2b2f0ecbf78e59fbdf  install.py
 f49b85e70800cbcf9913c58aaa6b84ce8267be22dd8ee85bab07c243d5c8c4b2  launch_manga.py
 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  licenses/Apache-2.0.txt
@@ -89,6 +90,7 @@ f2eea6dfba65ed3cfe6472d2f5e978263558449538842524b913af7d81f3b90b  models_tool.py
 1174b21aab4ad2755f2e072c68b22b6305faf3cf8fb51c58644e47bd0607b489  README.md
 4c4c0fe474c8320a81b32f890ca80450bad5c773e0d1469c0190c57deab5b1ff  release-assets.json
 2b50ef45de10feccd19a57410e4ee21243a28997317ddf9b61d3b2149e13109b  requirements-core.txt
+d60c65efeb318452cbc5923fc91b14c5b0ed841e34710fe65965a5ecec17a69b  scripts/package_delivery.py
 c03591aca36b0dec6cecfe103d7714e3be48a2a61ddb496892db0b5faf6246fa  scripts/upload_models_ci.py
 1d41c0ebece3e01ef98ec3aad37411f8b1a5738028e4e1215ca7afa45ae4b3f5  SELLER_GUIDE.md
 b9dc99f5822a788be6536433ad08b0096d48aa00de84d1696893f688f53ecd92  setup_core.py
@@ -96,11 +98,11 @@ b9dc99f5822a788be6536433ad08b0096d48aa00de84d1696893f688f53ecd92  setup_core.py
 949a131ac4339ca27c043a7f0639abf3bea5d121c0258ba39bdc82ce3d11ebbe  validation.json
 8abcf52bdb09e5eedbd049ecbe58943bcecf72cddfd42da586b2a2f911861fd1  vendor/ComfyUI-v0.43.0.zip
 95af09b28dc1487f8e25f76d3507fae367b4d8c06a24a587068a9420c2577f02  workflow.json
-a2456b3653fdac9957f7e9b43b2bd2ac71d0dc490b448e78b22684c5c487b305  ÏÂÔØÄ£ĞÍ.bat
-3aa72d3c36142ff004fd080df3898d817a5fc44543cc6b1d6010efd2098baed0  ×¼±¸ºËĞÄ»·¾³.bat
-1611f689ac13e126d06eb0baa013bc68ca4c1aa6eaeb320a0b7c638ae03ad6df  ºÏ²¢Ä£ĞÍ·Ö¾í.bat
-d7287af73e66088dd26dc5689acfff275ff4c8fcb7d9707e22b7d99645ab46f1  °²×°ÓëÊ¹ÓÃÊÖ²á.md
-944127409289888444248342ff19e8ebbb862b32ca05400073b150db6380da64  °²×°ÓëÊ¹ÓÃÊÖ²á.pdf
-eba28112a2ec6dcd20d75bb1a779bd036689003a1c8392ebb605ff9b7864d3c3  °²×°ÓëÊ¹ÓÃÊÖ²á.txt
-fb70a2019e4b3f20bf9f35954bdec06bbab5b64c73a6a693999373acd9796a31  °²×°½Úµã.bat
-302a60ccf03df60f1bd175680ba70962a4d6d5d9e50c29e3072afec6c38716ab  Ğ£ÑéÄ£ĞÍ.bat
+a2456b3653fdac9957f7e9b43b2bd2ac71d0dc490b448e78b22684c5c487b305  ä¸‹è½½æ¨¡å‹.bat
+3aa72d3c36142ff004fd080df3898d817a5fc44543cc6b1d6010efd2098baed0  å‡†å¤‡æ ¸å¿ƒç¯å¢ƒ.bat
+1611f689ac13e126d06eb0baa013bc68ca4c1aa6eaeb320a0b7c638ae03ad6df  åˆå¹¶æ¨¡å‹åˆ†å·.bat
+d7287af73e66088dd26dc5689acfff275ff4c8fcb7d9707e22b7d99645ab46f1  å®‰è£…ä¸ä½¿ç”¨æ‰‹å†Œ.md
+944127409289888444248342ff19e8ebbb862b32ca05400073b150db6380da64  å®‰è£…ä¸ä½¿ç”¨æ‰‹å†Œ.pdf
+eba28112a2ec6dcd20d75bb1a779bd036689003a1c8392ebb605ff9b7864d3c3  å®‰è£…ä¸ä½¿ç”¨æ‰‹å†Œ.txt
+fb70a2019e4b3f20bf9f35954bdec06bbab5b64c73a6a693999373acd9796a31  å®‰è£…èŠ‚ç‚¹.bat
+302a60ccf03df60f1bd175680ba70962a4d6d5d9e50c29e3072afec6c38716ab  æ ¡éªŒæ¨¡å‹.bat
