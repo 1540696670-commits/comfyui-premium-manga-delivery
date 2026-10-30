@@ -1,0 +1,123 @@
+{
+  "preview_only": {
+    "status": "passed",
+    "seconds": 3,
+    "images": [
+      {
+        "filename": "preview_only_00001_.png",
+        "subfolder": "MangaUnifiedQA",
+        "type": "output",
+        "metadata": {
+          "kind": "image",
+          "width": 768,
+          "height": 1152
+        }
+      }
+    ],
+    "route": null,
+    "check": true
+  },
+  "cached_preview": {
+    "status": "passed",
+    "seconds": 3,
+    "images": [
+      {
+        "filename": "cached_preview_00001_.png",
+        "subfolder": "MangaUnifiedQA",
+        "type": "output",
+        "metadata": {
+          "kind": "image",
+          "width": 768,
+          "height": 1152
+        }
+      }
+    ],
+    "route": null,
+    "check": true
+  },
+  "invalid_confirmation": {
+    "status": "passed",
+    "seconds": 3,
+    "images": [
+      {
+        "filename": "invalid_confirmation_00001_.png",
+        "subfolder": "MangaUnifiedQA",
+        "type": "output",
+        "metadata": {
+          "kind": "image",
+          "width": 768,
+          "height": 1152
+        }
+      }
+    ],
+    "route": null,
+    "check": true
+  },
+  "photo_only": {
+    "status": "passed",
+    "seconds": 99,
+    "images": [
+      {
+        "filename": "photo_only_00001_.png",
+        "subfolder": "MangaUnifiedQA",
+        "type": "output",
+        "metadata": {
+          "kind": "image",
+          "width": 288,
+          "height": 512
+        }
+      }
+    ],
+    "route": [
+      "photo"
+    ],
+    "check": false
+  },
+  "storyboard_and_reference": {
+    "status": "passed",
+    "seconds": 213,
+    "images": [
+      {
+        "filename": "storyboard_and_reference_00001_.png",
+        "subfolder": "MangaUnifiedQA",
+        "type": "output",
+        "metadata": {
+          "kind": "image",
+          "width": 768,
+          "height": 1152
+        }
+      }
+    ],
+    "route": [
+      "storyboard"
+    ],
+    "check": false
+  },
+  "auto_no_images": {
+    "status": "passed",
+    "seconds": 397,
+    "images": [
+      {
+        "filename": "auto_no_images_00001_.png",
+        "subfolder": "MangaUnifiedQA",
+        "type": "output",
+        "metadata": {
+          "kind": "image",
+          "width": 512,
+          "height": 768
+        }
+      }
+    ],
+    "route": [
+      "auto"
+    ],
+    "check": false
+  },
+  "ui_auto_check": "passed",
+  "ui_clear_both_inputs": "passed",
+  "ui_single_toolbar_entry": "passed",
+  "backend_invalid_confirmation_guard": "passed",
+  "hardware": "RTX 4070 Laptop 8GB / RAM 32GB",
+  "source_images_uploaded_to_github": false,
+  "combined_reference_output_outside_mask_exact": true
+}

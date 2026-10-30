@@ -1,0 +1,220 @@
+{
+  "1": {
+    "inputs": {
+      "ui_language": "中文 (ZH)",
+      "canvas_preset": "Custom (自定义宽高 / Custom W×H)",
+      "width": 768,
+      "height": 1152,
+      "bbox_ratio_sync": "Smart (文字/主体保比例，背景铺满)",
+      "scene_meta": "comic",
+      "canvas_layout_type": "multi_panel",
+      "layer_order_mode": "Auto (背景->物体->角色->文字置顶)",
+      "global_prompt": "等待漫画导演根据你的故事生成分镜。",
+      "layout_data": "{\"version\":2,\"base_width\":768,\"base_height\":1152,\"boxes\":[]}",
+      "external_sync_mode": "Replace Canvas (用外部 JSON 覆盖画布并回填)",
+      "custom_meta_tags": "sequential manga",
+      "external_layout_json": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "VMMOSSLayoutStudio",
+    "_meta": {
+      "title": "③ 主视觉与局部特写 · 自动分层布局"
+    }
+  },
+  "2": {
+    "inputs": {
+      "unet_name": "moss_image_sft_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "② MOSS SFT · INT8 低显存模型"
+    }
+  },
+  "3": {
+    "inputs": {
+      "clip_name": "qwen3.5_9b_int8_convrot.safetensors",
+      "type": "moss_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "MOSS 图像理解编码器 · 类型勿改"
+    }
+  },
+  "4": {
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "② Flux2 VAE"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": [
+        "1",
+        0
+      ],
+      "clip": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "③ 布局 JSON 编码（自动连接）"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "blurry, low quality, incoherent story, identical repeated panels, inconsistent character design, malformed hands, extra limbs, messy panel borders, random lettering, watermark",
+      "clip": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "③ 负面提示词"
+    }
+  },
+  "7": {
+    "inputs": {
+      "width": [
+        "1",
+        3
+      ],
+      "height": [
+        "1",
+        4
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyFlux2LatentImage",
+    "_meta": {
+      "title": "④ 画布尺寸 · 跟随工作台"
+    }
+  },
+  "8": {
+    "inputs": {
+      "seed": 42,
+      "steps": 35,
+      "cfg": 3.5,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "2",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "latent_image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "⑤ 精细漫画生成 · 35步 / CFG 3.5"
+    }
+  },
+  "9": {
+    "inputs": {
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8,
+      "samples": [
+        "8",
+        0
+      ],
+      "vae": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "⑥ 分块解码 · 节省显存"
+    }
+  },
+  "10": {
+    "inputs": {
+      "filename_prefix": "MOSS_Manga/PremiumComic",
+      "images": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "⑦ 高级分镜漫画 · 自动保存"
+    }
+  },
+  "11": {
+    "inputs": {
+      "images": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "布局预览 · 无需加载模型"
+    }
+  },
+  "13": {
+    "inputs": {
+      "clip_name": "qwen_3_4b_fp8_mixed.safetensors",
+      "type": "flux2",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "① 本地漫画导演模型 · 复用已有Qwen3 4B"
+    }
+  },
+  "14": {
+    "inputs": {
+      "story": "一位美丽的黑色长发成年女小提琴家，穿细致的黑色丝绒长裙，独自站在废弃歌剧院中。她刚得知再也见不到爱人，眼中含泪，手中握着断裂的银色怀表。风从破碎彩窗吹入，吹起长发与裙摆。画面伤感、华丽、安静而有压迫感。",
+      "panels": "Auto",
+      "style": "黑白精细漫画",
+      "mood": "大主视觉、人物破框、眼睛和手的局部特写、窄长画格、强烈黑白对比、清晰的视觉动线；不要等宽横条或九宫格。",
+      "width": 768,
+      "height": 1152,
+      "seed": 42,
+      "composition": "主视觉破框（参考图）",
+      "clip": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "MangaStoryboardDirector",
+    "_meta": {
+      "title": "② 输入任意故事 · 高级破框分镜导演"
+    }
+  },
+  "15": {
+    "inputs": {
+      "source": [
+        "14",
+        1
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "导演生成的故事、镜头与构图方案"
+    }
+  }
+}

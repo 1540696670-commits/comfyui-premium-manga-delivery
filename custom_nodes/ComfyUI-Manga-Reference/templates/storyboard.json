@@ -1,0 +1,253 @@
+{
+  "1": {
+    "inputs": {
+      "image": "storyboard_demo.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "① 上传自己的分镜页"
+    }
+  },
+  "2": {
+    "inputs": {
+      "panels_json": "",
+      "style_prompt": "Redraw this exact storyboard shot as finished black-and-white manga. Preserve the same subject, pose, viewpoint, camera distance, clothing and object positions. Refine ink lines and crosshatching. No additional panels, no lettering.",
+      "panel_max_side": 512,
+      "border_inset": 4,
+      "storyboard": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "MangaPanelExtract",
+    "_meta": {
+      "title": "② 确认分镜编号与区域，再进行重绘"
+    }
+  },
+  "3": {
+    "inputs": {
+      "unet_name": "moss_image_sft_int8_convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "MOSS SFT INT8"
+    }
+  },
+  "4": {
+    "inputs": {
+      "lora_name": "moss_image_edit_lora_rank_64_bf16.safetensors",
+      "strength_model": 1,
+      "model": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "图片编辑 LoRA · 必须安装"
+    }
+  },
+  "5": {
+    "inputs": {
+      "clip_name": "qwen3.5_9b_int8_convrot.safetensors",
+      "type": "moss_image",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "MOSS 文本编码器"
+    }
+  },
+  "6": {
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "FLUX.2 VAE"
+    }
+  },
+  "7": {
+    "inputs": {
+      "prompt": [
+        "2",
+        1
+      ],
+      "edit_format": "Moss-Image-Edit",
+      "image_strength": 1,
+      "clip": [
+        "5",
+        0
+      ],
+      "images.image_0": [
+        "2",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "TextEncodeMOSSImageEdit",
+    "_meta": {
+      "title": "③ 漫画化指令 · 保留人物和镜头"
+    }
+  },
+  "8": {
+    "inputs": {
+      "prompt": "different identity, changed pose, missing glasses, extra fingers, deformed face, lettering, watermark, additional panels",
+      "edit_format": "Moss-Image-Edit",
+      "image_strength": 1,
+      "clip": [
+        "5",
+        0
+      ],
+      "images.image_0": [
+        "2",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "TextEncodeMOSSImageEdit",
+    "_meta": {
+      "title": "负面指令 · 同样接参考图"
+    }
+  },
+  "9": {
+    "inputs": {
+      "pixels": [
+        "2",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "原图潜空间 · 保留构图"
+    }
+  },
+  "10": {
+    "inputs": {
+      "shift": 5,
+      "sampling": "flow",
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {
+      "title": "MOSS 采样移位"
+    }
+  },
+  "11": {
+    "inputs": {
+      "seed": 42,
+      "steps": 30,
+      "cfg": 3,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.4,
+      "model": [
+        "10",
+        0
+      ],
+      "positive": [
+        "7",
+        0
+      ],
+      "negative": [
+        "8",
+        0
+      ],
+      "latent_image": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "④ 重绘强度：越低越接近原图"
+    }
+  },
+  "12": {
+    "inputs": {
+      "samples": [
+        "11",
+        0
+      ],
+      "vae": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "漫画解码"
+    }
+  },
+  "13": {
+    "inputs": {
+      "composition": [
+        "2",
+        2
+      ],
+      "original": [
+        "1",
+        0
+      ],
+      "generated_panels": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "MangaPanelCompose",
+    "_meta": {
+      "title": "⑤ 精确放回原分镜 · 保护框线"
+    }
+  },
+  "14": {
+    "inputs": {
+      "images": [
+        "2",
+        3
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "先检查编号预览，复杂格框请手工修正 JSON"
+    }
+  },
+  "15": {
+    "inputs": {
+      "source": [
+        "2",
+        4
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "检测坐标 · 复制到 panels_json 锁定"
+    }
+  },
+  "16": {
+    "inputs": {
+      "filename_prefix": "MOSS_Reference/Storyboard",
+      "images": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存漫画"
+    }
+  }
+}

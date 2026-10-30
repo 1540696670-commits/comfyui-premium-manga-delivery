@@ -34,7 +34,7 @@ def find_panels(rgb):
     selected.sort(key=lambda c: (c[2][1] // max(1, h // 30), c[2][0]))
     if not selected:
         raise ValueError('未检测到闭合分镜框。请使用清晰边框，或在 panels_json 中填写矩形/多边形坐标后重试。')
-    return [dict(polygon=poly) for _, poly, _ in selected]
+    return [dict(polygon=poly, prompt='') for _, poly, _ in selected]
 
 
 def parse_panels(text, width, height):
