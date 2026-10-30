@@ -1,0 +1,20 @@
+{
+  "photo_generation": "passed",
+  "photo_test": {
+    "long_side": 512,
+    "steps": 24,
+    "denoise": 0.65,
+    "seconds": 87
+  },
+  "storyboard_generation": "passed",
+  "storyboard_test": {
+    "panel_count": 2,
+    "panel_long_side": 384,
+    "steps": 24,
+    "denoise": 0.4,
+    "seconds": 157
+  },
+  "actual_png_outside_mask_pixels_exact": true,
+  "hardware": "RTX 4070 Laptop 8GB / RAM32GB",
+  "limitations": "No 100% guarantee of automatic panel detection, image identity, semantic pose matching or artwork pixels."
+}

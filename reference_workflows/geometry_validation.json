@@ -1,0 +1,9 @@
+{
+  "automatic_demo_panels": 2,
+  "polygon_mask_cases": 9,
+  "outside_mask_pixels_exact": true,
+  "original_input_unmodified": true,
+  "output_dimensions_preserved": true,
+  "AI_content_exactness": "not guaranteed",
+  "nested_panel_borders_protected": true
+}

@@ -1,0 +1,8 @@
+{
+  "filename": "moss_image_edit_lora_rank_64_bf16.safetensors",
+  "path": "loras/moss_image_edit_lora_rank_64_bf16.safetensors",
+  "size": 297382216,
+  "sha256": "17a48b8c605dcffdedb92a2b887d18cf316505be90802717669fb6556098dcdf",
+  "url": "https://huggingface.co/Comfy-Org/MOSS-Image/resolve/main/loras/moss_image_edit_lora_rank_64_bf16.safetensors",
+  "source": "https://huggingface.co/chinoll/Moss-Image-Edit"
+}
